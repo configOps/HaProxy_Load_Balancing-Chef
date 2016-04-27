@@ -1,0 +1,11 @@
+server {
+
+	listen	 80;
+    	server_name <%= node['nginepic']['var_sitename'] %>;
+
+    	access_log /var/log/nginx/<%= node['nginepic']['var_sitename'] %>.access.log;
+    	error_log /var/log/nginx/<%= node['nginepic']['var_sitename'] %>.error.log;
+    	location / {
+        root   /etc/nginx/<%= node['nginepic']['var_sitename'] %>;
+        index  index.html index.htm;
+    }}

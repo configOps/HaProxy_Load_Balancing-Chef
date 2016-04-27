@@ -1,0 +1,7 @@
+name 'configure_haproxy'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures configure_haproxy'
+long_description 'Installs/Configures configure_haproxy'
+version '0.1.0'

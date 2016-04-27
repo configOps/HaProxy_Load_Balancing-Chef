@@ -1,0 +1,18 @@
+global
+        log 127.0.0.1   local2
+
+
+defaults
+    mode                    http
+    log                     global
+
+
+frontend LB
+   bind 172.28.128.32:80
+   reqadd X-Forwarded-Proto:\ http
+   default_backend LB
+backend LB 172.28.128.32:80
+  mode http
+  balance roundrobin
+  server  server1 172.28.128.33:80 check 
+  server  server2 172.28.128.34:90 check 
